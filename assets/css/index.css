@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    cursor: url("./images/cursor/default.png") 12 0, default;
+    cursor: url("../images/cursor/default.png") 12 0, default;
 }
 
 html {
@@ -19,7 +19,7 @@ body {
 }
 
 a {
-    cursor: url("./images/cursor/click.png") 12 12, pointer;
+    cursor: url("../images/cursor/click.png") 12 12, pointer;
     border: 0px dashed #341d15;
     text-decoration: none;
     transition-property: border padding;
@@ -102,7 +102,7 @@ main {
                 background-color: rgb(228, 138, 54);
                 border: none;
                 color: #f4f3f2;
-                cursor: url("./images/cursor/click.png") 12 12, pointer;
+                cursor: url("../images/cursor/click.png") 12 12, pointer;
             }
 
             button:active {
