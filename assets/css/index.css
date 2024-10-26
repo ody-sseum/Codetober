@@ -14,7 +14,11 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f5e49c;
+    background-color: #f5d19c;
+    background-image: url('../images/coffeebeans.jpg');
+    background-size: 30%;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     min-height: 100%;
 }
 
@@ -69,14 +73,15 @@ main {
         position: relative;
         margin: 1em;
         padding: 1em 1em 1em 1em;
-        height: 75%;
+        height: fit-content;
+        background-color: #f5d19c;
         box-shadow:   -5px 0 0 0 #341d15,
                  5px 0 0 0 #341d15,
                  0 -5px 0 0 #341d15,
                  0 5px 0 0 #341d15;
 
         p {
-            margin-top: clamp(3.5em, 4vw, 7em);
+            margin-top: clamp(2.5em, 4vw, 7em);
             font-size: clamp(1em, 2vw, 7em);
         }
 
@@ -122,7 +127,7 @@ main {
         position: absolute;
         font-family: Crang, sans-serif;
         font-size: clamp(2em, 4vw, 4em);
-        background-color: #f5e49c;
+        background-color: #f5d19c;
         width: 60%;
         top: 0;
         left: 50%;
@@ -162,12 +167,17 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        background-size: 75%;
+    }
+
     main {
         grid-template-columns: 1fr;
         grid-template-rows: 0.75fr 0.25fr;
 
         section::before {
-            transform: translate(-50%, -25px);
+            width: 90%;
+            transform: translate(-50%, -15px);
         }
 
         section {
