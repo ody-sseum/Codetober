@@ -1,0 +1,221 @@
+/* 6F4E37 a67b5b ecb176 fed8b1 ddf8e8 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    cursor: url("../images/cursor/default.png") 12 0, default;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5e49c;
+    min-height: 100%;
+}
+
+a {
+    cursor: url("../images/cursor/click.png") 12 12, pointer;
+    border: 0px dashed #341d15;
+    text-decoration: none;
+    transition-property: border padding;
+    transition: 0.2s ease-in-out;
+}
+
+a:hover {
+    padding: 0.25em;
+    border: 3px dashed #341d15;
+    transition-property: border padding;
+    transition: 0.2s ease-in-out;
+}
+
+nav {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eacb9f;
+    border-bottom: 2px solid #341d15;
+    z-index: 999;
+
+    ul {
+        display: flex;
+        gap: 1em;
+
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
+    align-items: center;
+
+    h1 {
+        font-family: Crang, sans-serif;
+        font-size: clamp(2em, 5vw, 4em);
+    }
+
+    section {
+        position: relative;
+        margin: 1em;
+        padding: 1em 1em 1em 1em;
+        height: 75%;
+        box-shadow:   -5px 0 0 0 #341d15,
+                 5px 0 0 0 #341d15,
+                 0 -5px 0 0 #341d15,
+                 0 5px 0 0 #341d15;
+
+        p {
+            margin-top: clamp(3.5em, 4vw, 7em);
+            font-size: clamp(1em, 2vw, 7em);
+        }
+
+        .btn-nav {
+            margin-top: clamp(0.5em, 2vw, 1em);
+            display: flex;
+            justify-content: space-between;
+            gap: clamp(0.5em, 1vw, 1em);
+
+            button {
+                box-shadow:   -5px 0 0 0 #341d15,
+                5px 0 0 0 #341d15,
+                0 -5px 0 0 #341d15,
+                0 5px 0 0 #341d15,
+                inset 0 -10px 0 #47271c,
+                inset 5px 0px 0 rgb(248, 180, 116),
+                inset -5px 0 0 rgb(248, 180, 116);
+
+                font-size: 2em;
+                padding: 0.5em 0.5em 0em 0.5em;
+                padding-bottom: calc(0.5em + 5px);
+                width: 100%;
+                background-color: rgb(228, 138, 54);
+                border: none;
+                color: #f4f3f2;
+                cursor: url("../images/cursor/click.png") 12 12, pointer;
+            }
+
+            button:active {
+                box-shadow:   -5px 0 0 0 #341d15,
+                5px 0 0 0 #341d15,
+                0 -5px 0 0 #341d15,
+                0 5px 0 0 #341d15,
+                inset 5px 0px 0 rgb(248, 180, 116),
+                inset -5px 0 0 rgb(248, 180, 116);
+                padding-bottom: 0.5em;
+            }
+        }
+    }
+
+    section::before {
+        content: "One Shot, Fight the Night";
+        position: absolute;
+        font-family: Crang, sans-serif;
+        font-size: clamp(2em, 4vw, 4em);
+        background-color: #f5e49c;
+        width: 60%;
+        top: 0;
+        left: 50%;
+        transform: translate(-75%, -25px);
+        text-align: center;
+    }
+
+    aside {
+        position: relative;
+        height: 100%;
+
+        .marquee {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            position: absolute;
+            top: -50%;
+            z-index: 1;
+            animation: marquee 12s linear infinite;
+
+            img {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-25%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.75fr 0.25fr;
+
+        section::before {
+            transform: translate(-50%, -25px);
+        }
+
+        section {
+            .btn-nav {
+                margin-top: clamp(0.5em, 2vw, 1em);
+                display: flex;
+                flex-direction: row;
+                gap: clamp(0.75em, 1vw, 1em);
+    
+                button {
+                    font-size: 1.25em;
+                    padding: 0.25em;
+                }
+            }
+        }
+        
+        aside {
+            display: flex;
+            position: relative;
+            align-items: center;
+            width: 100%;
+    
+            .marquee {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 1em;
+                position: absolute;
+                top: auto;
+                left: 0;
+                z-index: 1;
+                animation: marquee 12s linear infinite;
+    
+                img {
+                    width: 25%;
+                }
+            }
+        }
+
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+    
+        100% {
+            transform: translateX(-125%);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Crang';
+    src: url('Crang.woff2') format('woff2'),
+        url('Crang.woff') format('woff'),
+        url('Crang.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
