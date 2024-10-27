@@ -6,7 +6,7 @@ main {
     div.image {
         height: 100%;
         width: 100%;
-        background-image: url("/assets/images/coffee_shop.jpg");
+        background-image: url("../images/coffee_shop.jpg");
         background-size: cover;
         box-shadow:   -5px 0 0 0 #341d15,
         5px 0 0 0 #341d15,
