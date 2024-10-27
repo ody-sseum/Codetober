@@ -101,7 +101,7 @@ main {
         box-sizing: border-box;
 
         div.image {
-            background-image: url("../assets/images/coffee_shop.jpg");
+            background-image: url("../images/coffee_shop.jpg");
             background-size: cover;
             background-position: center;
         }
