@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    cursor: url("../images/cursor/default.png") 12 0, default;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5d19c;
+    background-image: url('../images/coffeebean-pixelicious.png');
+    background-size: 75%;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    min-height: 100%;
+}
+
+nav {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eacb9f;
+    border-bottom: 2px solid #341d15;
+    z-index: 999;
+
+    a {
+        cursor: url("../images/cursor/click.png") 12 12, pointer;
+        border: 0px dashed #341d15;
+        text-decoration: none;
+        transition-property: border padding;
+        transition: 0.2s ease-in-out;
+    }
+    
+    a:hover {
+        padding: 0.25em;
+        border: 3px dashed #341d15;
+        transition-property: border padding;
+        transition: 0.2s ease-in-out;
+    }
+
+    ul {
+        display: flex;
+        gap: 1em;
+
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
+    align-items: center;
+
+    h1 {
+        font-family: Crang, sans-serif;
+        font-size: clamp(2em, 5vw, 4em);
+    }
+}

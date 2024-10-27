@@ -1,25 +1,49 @@
-/* 6F4E37 a67b5b ecb176 fed8b1 ddf8e8 */
-
-
 main {
+    padding: 1em;
+    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-rows: 1fr;
+
+    div.image {
+        height: 100%;
+        width: 100%;
+        background-image: url("/assets/images/coffee_shop.jpg");
+        background-size: cover;
+        box-shadow:   -5px 0 0 0 #341d15,
+        5px 0 0 0 #341d15,
+        0 -5px 0 0 #341d15,
+        0 5px 0 0 #341d15;
+    }
+
     section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         position: relative;
-        margin: 1em;
         padding: 1em 1em 1em 1em;
-        height: fit-content;
+        height: 100%;
         background-color: #f5d19c;
+        box-sizing: border-box;
         box-shadow:   -5px 0 0 0 #341d15,
                  5px 0 0 0 #341d15,
                  0 -5px 0 0 #341d15,
                  0 5px 0 0 #341d15;
 
-        p {
-            margin-top: clamp(2.5em, 4vw, 7em);
-            font-size: clamp(1em, 2vw, 7em);
+
+        .body-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            h1 {
+                text-align: center;
+                font-size: clamp(2em, 4vw, 4em);
+            }
         }
 
         .btn-nav {
-            margin-top: clamp(0.5em, 2vw, 1em);
             display: flex;
             justify-content: space-between;
             gap: clamp(0.5em, 1vw, 1em);
@@ -62,65 +86,31 @@ main {
         }
     }
 
-    section::before {
-        content: "One Shot, Fight the Night";
-        position: absolute;
-        font-family: Crang, sans-serif;
-        font-size: clamp(2em, 4vw, 4em);
-        -webkit-text-stroke: 1.5px #f5d19c;
-        width: 60%;
-        top: 0;
-        left: 50%;
-        transform: translate(-75%, -25px);
-        text-align: center;
-    }
 
-    aside {
-        position: relative;
-        height: 100%;
-
-        .marquee {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1em;
-            position: absolute;
-            top: -50%;
-            z-index: 1;
-            animation: marquee 12s linear infinite;
-
-            img {
-                width: 50%;
-            }
-        }
-    }
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateY(0%);
-    }
-
-    100% {
-        transform: translateY(-25%);
+    section::-webkit-scrollbar {
+        display: none;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    body {
-        background-size: 75%;
-    }
-
     main {
+        height: 100svh;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.75fr 0.25fr;
+        grid-template-rows: 0.25fr 0.75fr;
+        overflow: hidden;
+        box-sizing: border-box;
 
-        section::before {
-            width: 90%;
-            transform: translate(-50%, -15px);
+        div.image {
+            background-image: url("/assets/images/coffee_shop.jpg");
+            background-size: cover;
+            background-position: center;
         }
 
         section {
+            align-self:flex-start;
+            height: 85%;
+
+            overflow-y: auto;
             .btn-nav {
                 margin-top: clamp(0.5em, 2vw, 1em);
                 display: flex;
@@ -153,41 +143,7 @@ main {
                     inset -5px 0 0 rgb(248, 180, 116);
                     padding-bottom: 0.25em;
                 }
-            }
-        }
-        
-        aside {
-            display: flex;
-            position: relative;
-            align-items: center;
-            width: 100%;
-    
-            .marquee {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                gap: 1em;
-                position: absolute;
-                top: auto;
-                left: 0;
-                z-index: 1;
-                animation: marquee 12s linear infinite;
-    
-                img {
-                    width: 25%;
-                }
-            }
-        }
-
-    }
-
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-    
-        100% {
-            transform: translateX(-125%);
         }
     }
+}
 }
